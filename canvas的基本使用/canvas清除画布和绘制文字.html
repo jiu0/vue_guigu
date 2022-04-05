@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title><%= webpackConfig.name %></title>
+    <style>
+      *{
+        margin:0;
+        padding:0;
+      }
+      canvas{
+         border:1px solid #ccc;
+      }
+
+    </style>
+  </head>
+  <body>
+    <!-- canvas 默认 宽高 300 * 150  在canvas 里面写内容 没有意义 写字元素 也没有意义  宽高设置 写在标签上 不要写在style 里面 不然js 里面的绘图坐标全部会错  -->
+     <canvas width="600" height="400"></canvas>
+     <script>
+        let canvas = document.querySelector('canvas');
+        let ctx = canvas.getContext('2d');  // 获取画布的笔
+        ctx.fillRect(100,200,100,200);
+        ctx.clearRect(100,200,50,100);
+        //ctx.clearRect(0,0,600,400); // 清除画布
+        ctx.font = '20px 微软雅黑';
+        ctx.fillStyle = 'red';
+        ctx.fillText('数据可视化',50,20)  // 绘制文字 x y 坐标
+      
+     </script>
+  </body>
+</html>

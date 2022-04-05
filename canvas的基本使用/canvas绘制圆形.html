@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title><%= webpackConfig.name %></title>
+    <style>
+      *{
+        margin:0;
+        padding:0;
+      }
+      canvas{
+         border:1px solid #ccc;
+      }
+
+    </style>
+  </head>
+  <body>
+    <!-- canvas 默认 宽高 300 * 150  在canvas 里面写内容 没有意义 写字元素 也没有意义  宽高设置 写在标签上  -->
+     <canvas width="600" height="400"></canvas>
+     <script>
+        let canvas = document.querySelector('canvas');
+        let ctx = canvas.getContext('2d');  // 获取画布的笔
+        ctx.beginPath();
+        ctx.arc(100,100,50,0,2*Math.PI,true)  // x y r 起始弧度  结束弧度 是否逆时针
+        ctx.fillStyle = 'red';
+        ctx.fill();
+        ctx.stroke();  //绘制圆形
+
+        // 绘制一个圆
+        ctx.beginPath();
+        ctx.arc(200,200,50,0,1,false)  // 圆心坐标 200 200 false  逆时针
+        ctx.stroke();
+     </script>
+  </body>
+</html>

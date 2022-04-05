@@ -33,7 +33,14 @@ Vue.use(ElementUI, { locale })
 // 如果想要中文版 element-ui，按如下方式声明
 // Vue.use(ElementUI)
 
-Vue.config.productionTip = false
+import API from '@/api';
+Vue.prototype.$API = API;
+
+import CategorySelect from '@/components/CategorySelect'
+Vue.component('CategorySelect',CategorySelect)
+
+import HintButton from '@/components/HintButton'
+Vue.component('HintButton',HintButton)
 
 new Vue({
   el: '#app',

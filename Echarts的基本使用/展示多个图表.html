@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title><%= webpackConfig.name %></title>
+    <script src="https://lib.baomitu.com/echarts/latest/echarts.js"></script>
+    <style>
+      *{
+        margin:0;
+        padding:0;
+      }
+    </style>
+  </head>
+  <body>
+     <div id="main" style="width:800px;height:400px"></div>
+     <div id="main2" style="width:800px;height:400px"></div>
+     <script>
+        let div1 = document.querySelector('#main');
+        let div2 = document.querySelector('#main2');
+        let myCharts1 = echarts.init(div1)
+        let myCharts2 = echarts.init(div2)
+        myCharts1.setOption({
+            title:{
+               text:'主标题',
+               subtext:'副标题',
+               textStyle:{
+                  color:'blue'
+               },
+               left:'center',
+            },
+            xAxis:{
+               data:['电影','电视','直播','饮食']
+            },
+            yAxis:{
+               //显示y轴的线
+               axisLine:{
+                  show:true
+               },
+               // y轴刻度
+               axisTick:{
+                  show:true
+               },
+            },
+            series:[  // 绘制什么样的图表 数据展示在这里设置  bar 柱状图  line 折线图   pie 饼图
+               {
+                 type:'bar',
+                 data:[10,20,30,40],
+                 color:'red',
+               },
+            ],
+        })
+        myCharts2.setOption({
+            title:{
+               text:'主标题2',
+               subtext:'副标题2',
+               textStyle:{
+                  color:'pink'
+               },
+               subtextStyle:{
+                  color:'yellow'
+               },
+               left:'center',
+            },
+            xAxis:{
+               data:['电影2','电视2','直播2','饮食2']
+            },
+            yAxis:{
+               //显示y轴的线
+               axisLine:{
+                  show:true
+               },
+               // y轴刻度
+               axisTick:{
+                  show:true
+               },
+            },
+            series:[  // 绘制什么样的图表 数据展示在这里设置  bar 柱状图  line 折线图   pie 饼图
+               {
+                 type:'line',
+                 data:[10,22,29,66],
+                 color:'red',
+               },
+            ],
+        })
+     </script>
+  </body>
+</html>
